@@ -1,0 +1,123 @@
+.tablero {
+    width: min(960px, 100%);
+    display: grid;
+    gap: 20px;
+}
+
+.tablero__cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.tablero__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tablero__cargando {
+    color: var(--texto-suave);
+}
+
+.tablero__evento {
+    display: grid;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--borde);
+    border-left: var(--pixel) solid var(--acento);
+
+    h2 {
+        color: var(--acento);
+    }
+
+    strong {
+        color: var(--acento);
+        font-weight: 400;
+    }
+}
+
+.tablero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.tablero__bloque {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    min-width: 0;
+    padding: 12px 16px;
+    background: var(--borde);
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.tablero__ayuda {
+    color: var(--texto-suave);
+}
+
+.tablero__personas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tablero__lugares {
+    display: grid;
+    gap: 10px;
+
+    li {
+        display: grid;
+    }
+}
+
+.tablero__lugar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    color: var(--texto);
+}
+
+.tablero__descripcion {
+    color: var(--texto-suave);
+}
+
+.tablero__objetos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.etiqueta {
+    font: 8px/1.6 var(--titulo);
+    text-transform: uppercase;
+    color: var(--texto-boton);
+    background: var(--acento);
+    padding: 2px 6px;
+}
+
+.etiqueta--objeto {
+    font: 18px/1.2 var(--cuerpo);
+    text-transform: none;
+    color: var(--texto);
+    background: var(--panel-claro);
+    padding: 4px 10px;
+}
+
+.pendiente {
+    width: min(560px, 100%);
+    margin-block: auto;
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+}
