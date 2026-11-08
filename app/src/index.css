@@ -153,6 +153,23 @@ p {
     inset 0 calc(-1 * var(--pixel)) 0 0 var(--panel);
 }
 
+/* Etiqueta pequena (lugar del evento) y su variante para objetos y lugares. */
+.etiqueta {
+  font: 8px/1.6 var(--titulo);
+  text-transform: uppercase;
+  color: var(--texto-boton);
+  background: var(--acento);
+  padding: 2px 6px;
+}
+
+.etiqueta--objeto {
+  font: 18px/1.2 var(--cuerpo);
+  text-transform: none;
+  color: var(--texto);
+  background: var(--panel-claro);
+  padding: 4px 10px;
+}
+
 .mensaje {
   padding: 8px 12px;
   border-left: var(--pixel) solid currentColor;

@@ -97,22 +97,6 @@
     gap: 8px;
 }
 
-.etiqueta {
-    font: 8px/1.6 var(--titulo);
-    text-transform: uppercase;
-    color: var(--texto-boton);
-    background: var(--acento);
-    padding: 2px 6px;
-}
-
-.etiqueta--objeto {
-    font: 18px/1.2 var(--cuerpo);
-    text-transform: none;
-    color: var(--texto);
-    background: var(--panel-claro);
-    padding: 4px 10px;
-}
-
 .pendiente {
     width: min(560px, 100%);
     margin-block: auto;
