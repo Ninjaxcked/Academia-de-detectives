@@ -195,6 +195,31 @@ explicacion(Persona, Explicacion) :-
     once(tiene_contradiccion(Persona)),
     Explicacion = "Conclusion: posible sospechoso por inconsistencia (vinculo con el evento y testimonio contradicho).".
 
+
+% Explicacion a favor: no podia entrar al lugar del evento (ni directo ni
+% con un objeto), ningun registro la ubica alli durante la ventana del
+% evento y ninguna evidencia hallada alli le corresponde.
+explicacion(Persona, Explicacion) :-
+    evento(_, LugarEvento, _),
+    \+ tiene_acceso(Persona, LugarEvento),
+    \+ (estuvo(Persona, LugarEvento, Hora), en_ventana_evento(Hora)),
+    \+ (evidencia(Evidencia, LugarEvento, _), corresponde(Evidencia, Persona)),
+    format(string(Explicacion),
+        "A favor: no tiene acceso a ~w, no estuvo alli cerca de la hora del evento y no tiene evidencias en ese lugar.",
+        [LugarEvento]).
+
+% Explicacion a favor: un registro de movimiento la ubica en otro lugar
+% durante la ventana del evento.
+explicacion(Persona, Explicacion) :-
+    evento(_, LugarEvento, _),
+    estuvo(Persona, OtroLugar, Hora),
+    OtroLugar \= LugarEvento,
+    en_ventana_evento(Hora),
+    hora_texto(Hora, Texto),
+    format(string(Explicacion),
+        "A favor: el registro la ubica en ~w a las ~w, durante la ventana del evento.",
+        [OtroLugar, Texto]).
+
 % Una solucion es valida si la persona sigue cumpliendo la sospecha, pudo
 % llegar al lugar del evento (acceso o presencia registrada) y ninguna
 % coartada la aleja de el.
