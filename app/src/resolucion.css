@@ -1,0 +1,142 @@
+.resolucion {
+    width: min(960px, 100%);
+    display: grid;
+    gap: 20px;
+}
+
+.resolucion__cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.resolucion__cargando {
+    color: var(--texto-suave);
+}
+
+.resolucion__conclusion {
+    display: grid;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--borde);
+    border-left: var(--pixel) solid var(--acento);
+
+    strong {
+        color: var(--acento);
+        font-weight: 400;
+    }
+}
+
+.expediente {
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+    background: var(--borde);
+}
+
+.expediente__cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Sello del expediente: el resultado de solucion_valida/1. */
+/* Sin mayusculas: la fuente pixel no tiene vocales mayusculas con tilde. */
+.sello {
+    font: 10px/1.6 var(--titulo);
+    padding: 6px 10px;
+    border: var(--pixel) solid currentColor;
+    transform: rotate(-2deg);
+}
+
+.sello--valida {
+    color: var(--exito);
+}
+
+.sello--invalida {
+    color: var(--peligro);
+}
+
+.expediente__puntos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+}
+
+.punto {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    min-width: 0;
+    padding: 12px 14px;
+    background: var(--panel);
+
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--texto-suave);
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 6px;
+    }
+
+    .pixel-btn {
+        justify-self: start;
+    }
+}
+
+.punto__numero {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    font: 10px/1 var(--titulo);
+    color: var(--texto-boton);
+    background: var(--acento);
+}
+
+.expediente__movimiento {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+}
+
+.expediente__hora {
+    color: var(--acento);
+    font-variant-numeric: tabular-nums;
+}
+
+.punto .expediente__accesos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.expediente__coartada {
+    color: var(--exito);
+}
+
+.expediente__contradiccion {
+    color: var(--peligro);
+}
+
+.expediente__justificacion li {
+    padding-left: 12px;
+    border-left: var(--pixel) solid var(--panel-claro);
+}
+
+/* La justificacion ocupa todo el ancho del expediente. */
+.punto:last-child {
+    grid-column: 1 / -1;
+}
