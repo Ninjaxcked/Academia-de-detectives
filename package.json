@@ -1,0 +1,12 @@
+{
+  "name": "academia-detectives",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "instalar": "npm install && npm install --prefix server && npm install --prefix app",
+    "dev": "concurrently --names server,app --prefix-colors cyan,yellow --kill-others-on-fail \"npm --prefix server start\" \"npm --prefix app run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
