@@ -97,7 +97,6 @@ reporte_json(Persona, obj([
         member(contradiccion(L, H, L2, H2), Contradicciones), ContradiccionesJson),
     (Valida == si -> Valor = true ; Valor = false).
 
-% ---------- Serializacion JSON (sin librerias) ----------
 
 json(Numero) :-
     number(Numero),
